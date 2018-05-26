@@ -55,7 +55,7 @@ install_base () {
   screen -r hass
 
 #  cp daemon.homeassistant /usr/local/etc/rc.d/homeassistant
-#  chmod +x /usr/local/etc/rc.d/homeassistant
+  chmod +x /usr/local/etc/rc.d/homeassistant
   sysrc -f /etc/rc.conf homeassistant_enable=yes
   service homeassistant start 2>/dev/null
   echo "Finished!"
