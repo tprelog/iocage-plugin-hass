@@ -55,7 +55,7 @@ homeassistant_precmd()
     
     if [ ! -d "${homeassistant_config_dir}" ]; then
         install -d -g ${homeassistant_group} -o ${homeassistant_user} -m 775 -- "${homeassistant_config_dir}"
-        pause="sleep 5";
+        pause="sleep 10";
     fi
 }
 
@@ -67,5 +67,9 @@ homeassistant_postcmd()
 }
 
 run_rc_command "$1"                           # start homeassistant then
+
+echo; echo " Hang on while Home Assistant starts. This can take a few minutes if "
+echo " you're creating a clean config directory "; echo
+
 ${pause}                                      # wait a few seconds before 
 chmod -R g=u "${homeassistant_config_dir}/"   # setting group permissions equal to user permissions
