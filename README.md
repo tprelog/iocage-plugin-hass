@@ -1,2 +1,2 @@
 # iocage-plugin-hass
-Home Assistant plugin for FreeNAS
+Artifact file(s) for Home Assistant iocage plugin
