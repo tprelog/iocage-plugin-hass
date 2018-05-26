@@ -54,10 +54,10 @@ install_base () {
   screen -dmS hass su - hass -c "bash ${Folder}/${File} hass"
   screen -r hass
 
-  cp daemon.homeassistant /usr/local/etc/rc.d/homeassistant
-  chmod +x /usr/local/etc/rc.d/homeassistant
+#  cp daemon.homeassistant /usr/local/etc/rc.d/homeassistant
+#  chmod +x /usr/local/etc/rc.d/homeassistant
   sysrc homeassistant_enable=yes
-  service homeassistant start
+  service homeassistant start 2>/dev/null
   echo "Finished!"
 
 }
